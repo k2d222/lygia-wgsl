@@ -69,22 +69,22 @@ fn fetch_repo(url: &str, rev: &str, dest: &Path) {
 }
 
 fn main() {
-    let lygia_repo = "https://github.com/patriciogonzalezvivo/lygia";
-    let lygia_rev = "748ea12305fcb5c83c37575d156e3a4b20a4ef03";
+    let lygia_repo = "https://github.com/k2d222/wesl-lygia";
+    let lygia_rev = "774f83f6e890e81003cf41cbedc8a3fa1daf00b5";
     let lygia_path = Path::new("./lygia");
 
     fetch_repo(lygia_repo, lygia_rev, lygia_path);
 
     // currently lygia contains wgsl files which interfere with wesl build system.
-    Command::new("git")
-        .args(["rm", "'*.wgsl'"])
-        .current_dir(lygia_path)
-        .stdout(std::process::Stdio::null())
-        .stderr(std::process::Stdio::inherit())
-        .spawn()
-        .expect("failed to execute git clone")
-        .wait()
-        .expect("failed to wait on git");
+    // Command::new("git")
+    //     .args(["rm", "'*.wgsl'"])
+    //     .current_dir(lygia_path)
+    //     .stdout(std::process::Stdio::null())
+    //     .stderr(std::process::Stdio::inherit())
+    //     .spawn()
+    //     .expect("failed to execute git clone")
+    //     .wait()
+    //     .expect("failed to wait on git");
 
     wesl::PkgBuilder::new("lygia")
         .scan_root("lygia")

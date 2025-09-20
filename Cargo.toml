@@ -1,0 +1,12 @@
+[package]
+name = "lygia-wgsl"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+[build-dependencies]
+wesl = { version = "0.2.0", features = ["package", "eval"] }
+
+[patch.crates-io]
+wesl = { path = "../wesl-rs/crates/wesl" }

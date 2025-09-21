@@ -70,7 +70,7 @@ fn fetch_repo(url: &str, rev: &str, dest: &Path) {
 
 fn main() {
     let lygia_repo = "https://github.com/k2d222/lygia";
-    let lygia_rev = "774f83f6e890e81003cf41cbedc8a3fa1daf00b5";
+    let lygia_rev = "ee149f495896ef2a353b6e7adf53ce2b1fe06866";
     let lygia_path = Path::new("./lygia");
 
     fetch_repo(lygia_repo, lygia_rev, lygia_path);

@@ -1,3 +1,7 @@
+[workspace]
+members = ["examples/consumer", "examples/builder"]
+resolver = "3"
+
 [package]
 name = "lygia-wgsl"
 version = "0.1.0"
